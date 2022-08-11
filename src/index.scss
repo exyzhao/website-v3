@@ -35,6 +35,10 @@ body {
     margin-left: 20px;
   }
 
+  .email {
+    overflow-wrap: anywhere;
+  }
+
   // &,
   // * {
   //   cursor: none;
@@ -140,4 +144,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media only screen and (min-device-width: 769px) {
+  .mobile-break {
+    display: none;
+  }
 }

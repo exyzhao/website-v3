@@ -7,7 +7,7 @@ const Contact = () => {
     <FadeIn>
       <p class="back"><Link to="/">Back</Link></p>
       <h1>Contact</h1>
-      <h2><a href="mailto:exyzhao@wharton.upenn.edu">exyzhao@wharton.upenn.edu</a></h2>
+      <h2><a href="mailto:exyzhao@wharton.upenn.edu">exyzhao<br className="mobile-break"/>@wharton.upenn.edu</a></h2>
     </FadeIn>
   )
 }
