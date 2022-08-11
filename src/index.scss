@@ -68,15 +68,52 @@ body {
 
     $shapes: (#005FFE: 650px, #FFE5E3: 440px, #FFCC57: 270px);
 
-    @each $color,
-    $size in $shapes {
-      &.shape-#{index($shapes, ($color $size))} {
-        background: $color;
-        width: $size;
-        height: $size;
-        margin: (-$size/2) 0 0 (-$size/2);
-      }
-    }
+    // @each $color,
+    // $size in $shapes {
+    //   &.shape-#{index($shapes, ($color $size))} {
+    //     background: $color;
+    //     // width: $size;
+    //     // height: $size;
+    //     // margin: (-$size/2) 0 0 (-$size/2);
+    //   }
+    // }
+  }
+
+  $shape-1-min: 185px;
+  $shape-2-min: 132px;
+  $shape-3-min: 81px;
+
+  $shape-1-val: 28vw;
+  $shape-2-val: 18vw;
+  $shape-3-val: 12vw;
+
+  $shape-1-max: 650px;
+  $shape-2-max: 440px;
+  $shape-3-max: 270px;
+
+
+  .shape-1 {
+    background: #005FFE;
+    width: clamp($shape-1-min, $shape-1-val, $shape-1-max);
+    height: clamp($shape-1-min, $shape-1-val, $shape-1-max);
+    margin-left: calc(-1/2 * clamp($shape-1-min, $shape-1-val, $shape-1-max));
+    margin-top: calc(-1/2 * clamp($shape-1-min, $shape-1-val, $shape-1-max));
+  }
+
+  .shape-2 {
+    background: #FFE5E3;
+    width: clamp($shape-2-min, $shape-2-val, $shape-2-max);
+    height: clamp($shape-2-min, $shape-2-val, $shape-2-max);
+    margin-left: calc(-1/2 * clamp($shape-2-min, $shape-2-val, $shape-2-max));
+    margin-top: calc(-1/2 * clamp($shape-2-min, $shape-2-val, $shape-2-max));
+  }
+
+  .shape-3 {
+    background: #FFCC57;
+    width: clamp($shape-3-min, $shape-3-val, $shape-3-max);
+    height: clamp($shape-3-min, $shape-3-val, $shape-3-max);
+    margin-left: calc(-1/2 * clamp($shape-3-min, $shape-3-val, $shape-3-max));
+    margin-top: calc(-1/2 * clamp($shape-3-min, $shape-3-val, $shape-3-max));
   }
 
   .content {
