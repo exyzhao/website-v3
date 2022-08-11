@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+
+  h1 {
+    color: black;
+    font-size: clamp(3.5rem, 10vw, 10rem);
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    color: black;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  h3 {
+    color: black;
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+  }
+
+  p {
+    color: black;
+    font-size: clamp(1.2rem, 2vw, 2.2rem);
+    margin: 0.5em 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline dotted;
+  }
+
+  .list-item {
+    margin-left: 20px;
+  }
+
+  // &,
+  // * {
+  //   cursor: none;
+  // }
+
+  // .cursor {
+  //   position: fixed;
+  //   background: #2128BD;
+  //   width: 20px;
+  //   height: 20px;
+  //   border-radius: 50%;
+  //   margin: -10px 0 0 -10px;
+  //   will-change: transform;
+  //   user-select: none;
+  //   pointer-events: none;
+  //   z-index: 99999;
+  // }
+
+  .shapes {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #2128BD;
+    overflow: hidden;
+  }
+
+  .shape {
+    will-change: transform;
+    position: absolute;
+    border-radius: 50%;
+
+    $shapes: (#005FFE: 650px, #FFE5E3: 440px, #FFCC57: 270px);
+
+    @each $color,
+    $size in $shapes {
+      &.shape-#{index($shapes, ($color $size))} {
+        background: $color;
+        width: $size;
+        height: $size;
+        margin: (-$size/2) 0 0 (-$size/2);
+      }
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: white;
+    mix-blend-mode: screen;
+  }
+}
+
+.page-container {
+  padding: 0 20px 64px;
+  height: min-content;
+}
+
+.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
